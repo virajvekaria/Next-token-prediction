@@ -184,7 +184,6 @@ if st.button("Generate"):
  34: 'y',
  35: 'z'}  # Your character to index mapping
     stoi = {i:s for s,i in itos.items()}  # Your index to character mappingoi)
-    print(stoi)
     vocab_size = 36
     model = load_model(emb_size, block_size, model_num, vocab_size)
 
