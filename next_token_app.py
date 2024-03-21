@@ -25,7 +25,7 @@ st.title("Next Token Prediction")
 emb_size = st.slider("Embedding Size", 2, 6, value=4)
 block_size = st.slider("Block Size", 5, 10, value=7)
 model_num = st.slider("Model Number", 1, 5, value =3)
-context = st.text_input("Context String", value="brutus: ", max_chars=block_size)
+context = st.text_input("Context String", value="brutus:", max_chars=block_size)
 k = st.number_input("Number of Characters to Generate", min_value=1, value=100)
 
 # Define the model architecture (this should match your saved models)
