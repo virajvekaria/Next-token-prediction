@@ -191,4 +191,5 @@ if st.button("Generate"):
 
     # Generate the next k characters
     next_chars = generate_next_chars(model, stoi, itos, context, k)
-    st.write("Next characters:\n", next_chars)
+    st.write("Next characters:")
+    st.write(next_chars)
