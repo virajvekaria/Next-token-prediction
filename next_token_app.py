@@ -28,7 +28,7 @@ st.title("Next Token Prediction")
 emb_size = st.slider("Embedding Size", 2, 6, value=4)
 block_size = st.slider("Block Size", 5, 10, value=7)
 model_num = st.slider("Model Number", 1, 5, value =3)
-context = st.text_input("Context String", value="brutus: ", max_chars=block_size)
+context = st.text_input("Context String", value="brutus:", max_chars=block_size)
 k = st.number_input("Number of Characters to Generate", min_value=1, value=100)
 
 # Define the model architecture (this should match your saved models)
@@ -187,7 +187,6 @@ if st.button("Generate"):
  34: 'y',
  35: 'z'}  # Your character to index mapping
     stoi = {i:s for s,i in itos.items()}  # Your index to character mappingoi)
-    print(stoi)
     vocab_size = 36
     model = load_model(emb_size, block_size, model_num, vocab_size)
 
@@ -195,4 +194,5 @@ if st.button("Generate"):
 
     # Generate the next k characters
     next_chars = generate_next_chars(model, stoi, itos, context, k)
-    st.write("Next characters:", next_chars)
+    st.write("Next characters:")
+    st.write(next_chars)
