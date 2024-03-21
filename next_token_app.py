@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+seed = st.number_input("Random Seed", min_value=1, value=100)
 
 # Function to generate the next k characters
 def generate_next_chars(model, stoi, itos, context, k):
@@ -10,6 +11,8 @@ def generate_next_chars(model, stoi, itos, context, k):
     context = [stoi[ch] for ch in context]
 
     generated_tokens = []
+    g = torch.Generator()
+    g.manual_seed(seed)
     for _ in range(k):
         x = torch.tensor(context).view(1, -1).to(device)
         y_pred = model(x)
