@@ -25,6 +25,7 @@ st.title("Next Token Prediction")
 # Inputting values from the users in the app
 emb_size = st.slider("Embedding Size", 2, 6, value=4)
 block_size = st.slider("Block Size", 5, 10, value=7)
+st.write("You can find the different model architectures in the repo for this app")
 model_num = st.slider("Model Number", 1, 5, value =3)
 context = st.text_input("Context String", value="brutus:", max_chars=block_size)
 seed = st.number_input("Random Seed", min_value=1, value=100)
